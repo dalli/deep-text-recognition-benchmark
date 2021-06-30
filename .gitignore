@@ -14,9 +14,8 @@
 
 # data files
 data/
-train/
-valid/
-test/
+data_lmdb/
+saved_models/
 
 ### Linux ###
 *~

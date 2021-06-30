@@ -1,6 +1,8 @@
 import os
 import random
 
+random.seed(777)
+
 for root, dirs, files in os.walk("../out/"):
     for filename in files:
         # print("~/work/out/{}\t{}".format(filename, filename.split('_')[0]))
@@ -24,9 +26,10 @@ train_f = open("gt_train.txt", "w")
 i = 0
 for filename in train_files:
     src_file = "../out/"+filename
-    dst_file = "train/"+filename
+    dst_file = "../data/train/"+filename
     os.rename(src_file, dst_file)
-    train_f.write('train/{0}\t{1}\n'.format(filename, filename.split('_')[0]))
+    print('../data/train/{0}\t{1}\n'.format(filename, filename.split('_')[0]))
+    train_f.write('../data/train/{0}\t{1}\n'.format(filename, filename.split('_')[0]))
     i += 1
 
 train_f.close()
@@ -36,9 +39,10 @@ validation_f = open("gt_validation.txt", "w")
 i = 0
 for filename in train_files:
     src_file = "../out/"+filename
-    dst_file = "valid/"+filename
+    dst_file = "../data/valid/"+filename
     os.rename(src_file, dst_file)
-    validation_f.write('valid/{0}\t{1}\n'.format(filename, filename.split('_')[0]))
+    print('../data/valid/{0}\t{1}\n'.format(filename, filename.split('_')[0]))
+    validation_f.write('../data/valid/{0}\t{1}\n'.format(filename, filename.split('_')[0]))
     i += 1
 
 validation_f.close()
@@ -48,9 +52,10 @@ test_f = open("gt_test.txt", "w")
 i = 0
 for filename in train_files:
     src_file = "../out/"+filename
-    dst_file = "test/"+filename
+    dst_file = "../data/test/"+filename
     os.rename(src_file, dst_file)
-    test_f.write('test/{0}\t{1}\n'.format(filename, filename.split('_')[0]))
+    print('../data/test/{0}\t{1}\n'.format(filename, filename.split('_')[0]))
+    test_f.write('../data/test/{0}\t{1}\n'.format(filename, filename.split('_')[0]))
     i += 1
 
 test_f.close()
