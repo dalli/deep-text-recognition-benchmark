@@ -12,6 +12,12 @@
 *.eps
 *.pdf
 
+# data files
+data/
+train/
+valid/
+test/
+
 ### Linux ###
 *~
 
